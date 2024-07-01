@@ -30,8 +30,8 @@ public class ContatoController {
         return service.allContacts().stream().map(ContatoResponseDTO:: new).toList();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/{celular}")
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
     public ContatoResponseDTO getContact(@PathVariable String celular) {
         return service.getContact(celular);
     }
